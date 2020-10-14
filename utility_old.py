@@ -517,7 +517,7 @@ class sDGRM_class:
             temp_gamma = np.ones((self.dataNum, self.dataNum))*self.gamma_1_l[ll]
             np.fill_diagonal(temp_gamma, self.gamma_0_l[ll])
 
-            temp_qil = np.dot(q_il[ll].reshape((-1, 1)), np.ones((1,self.dataNum)))
+            temp_qil = np.ones((self.dataNum, 1)).dot(q_il[ll].reshape((1, -1)))
 
             posterior_a = (temp_gamma + z_ik[ll])[dataR_H == 1]
             posterior_inverse_scale = (self.c_l[ll] - np.log(temp_qil))[dataR_H == 1]
