@@ -38,7 +38,8 @@ if __name__ == '__main__':
         KK = 20
         LL = 3
 
-        feaMat = scio.loadmat(pathss+data_feature[name_i_index]+'.mat')['features'].astype(float)
+#         feaMat = scio.loadmat(pathss+data_feature[name_i_index]+'.mat')['features'].astype(float)
+        feaMat = np.eye(dataNum)
         FF = feaMat.shape[1]
 
 
